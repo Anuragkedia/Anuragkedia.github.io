@@ -3,7 +3,25 @@
 <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.1/aframe/build/aframe-ar.js"></script>
   <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+     <script>
+    AFRAME.registerComponent('markerhandler', {
+    init: function() {
+        // const animatedMarker = document.querySelector("#animated-marker");
+        const aEntity = document.querySelector("#animated-model");
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                const scale = aEntity.getAttribute('scale');
+                Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+                aEntity.setAttribute('scale', scale);
+            }
+        });
+}});
+    </script>
+	  
+	  
+	  <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 <!--        	<a-marker type='barcode' value='5'>
           <!-- a-box position='0 0.5 0' material='color: yellow; opacity: 0.2;'-->
 <!--           <a-entity position='1 1 0' scale="3 3 3" text="value: HELLO;color:black"></a-entity>
@@ -19,20 +37,18 @@
          <a-entity position='0 0.5 0' scale="3 3 3" text="value: HELLO;color:black"></a-entity>
       </a-marker>
       
-            <a-marker type='barcode' value='5'>
-			
-
+          <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" type='barcode' value='5'>
 			<a-text
+				id="animated-model"
 				value="I AM A MOUSE \n | \n | " 
 				align='center' 
 				anchor='align' 
 				rotation="-45 0 0">
-		    	</a-text>
-				
-			
-		</a-marker>
-	    
-	     <a-marker type='barcode' value='1'>
+		    	</a-text>	
+	</a-marker>
+	
+		  
+		  <a-marker type='barcode' value='1'>
 			
 
 			<a-text 
