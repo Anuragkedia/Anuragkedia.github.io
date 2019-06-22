@@ -1,0 +1,145 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	   <style>
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+background-image: url("mouse.jpg");
+	opacity : 0.5;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+</style>
+	    
+    </head>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    
+    <!-- import events.js script -->
+<!--     <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script> -->
+    
+    
+    <script>
+	    
+	   // var modal = document.getElementById("myModal");
+   AFRAME.registerComponent('markerhandler', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        const aEntity = document.querySelector("#animated-model");
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                //const scale = aEntity.getAttribute('scale');
+               // Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+               // aEntity.setAttribute('scale', scale);
+		      document.getElementById("overlay").style.display = "block";
+		    	//window.open("https://www.github.com");
+		    //  modal.style.display = "block";
+            }
+        });
+}});
+    </script>
+    
+       
+    <script>
+	    
+	   // var modal = document.getElementById("myModal");
+   AFRAME.registerComponent('markerhandler2', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker2");
+        const aEntity = document.querySelector("#animated-model2");
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                //const scale = aEntity.getAttribute('scale');
+               // Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+               // aEntity.setAttribute('scale', scale);
+		      document.getElementById("overlay").style.display = "block";
+		    	//window.open("https://www.github.com");
+		    //  modal.style.display = "block";
+            }
+        });
+}});
+    </script>
+	
+	<script>
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+    
+    <body style='margin : 0px; overflow: hidden;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+       <div id="overlay" onclick="off()">
+ 	 <div id="text">Overlay Text</div>
+	</div>
+	    
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+<!--         <a-assets>
+            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
+        </a-assets> -->
+
+    <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
+            <a-box
+                id="animated-model"
+                material='opacity: 0.0;'
+                scale="2">
+<!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
+                <a-text
+				
+				value="I AM A MOUSE \n | \n | " 
+				align='center' 
+				anchor='align'
+			
+				rotation="-45 0 0">
+		    	</a-text>	
+            </a-box>
+        </a-marker>
+        
+        
+         <a-marker markerhandler2 emitevents="true" cursor="rayOrigin: mouse" id="animated-marker2" type='barcode' value='1'>
+            <a-box
+                id="animated-model2"
+                material='opacity: 0.0;'
+                scale="2">
+<!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
+                <a-text
+				
+				value="I AM A KEYBOARD \n | \n | " 
+				align='center' 
+				anchor='align'
+			
+				rotation="-45 0 0">
+		    	</a-text>	
+            </a-box>
+        </a-marker>
+        
+        
+
+        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
