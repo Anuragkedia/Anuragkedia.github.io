@@ -2,7 +2,51 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+	    
     </head>
+	
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -10,10 +54,21 @@
     <!-- import events.js script -->
 <!--     <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script> -->
     
+	
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
     
     <script>
+	    
+	    var modal = document.getElementById("myModal");
    AFRAME.registerComponent('markerhandler', {
-
+	
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
         const aEntity = document.querySelector("#animated-model");
@@ -25,9 +80,8 @@
                 const scale = aEntity.getAttribute('scale');
                 Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
                 aEntity.setAttribute('scale', scale);
-		window.open("https://www.github.com");
-
-
+		    modal.style.display = "block";
+		//window.open("https://www.github.com");
             }
         });
 }});
@@ -35,13 +89,13 @@
     
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
         </a-assets>
 
-    <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
+    <a-marker markerhandler emitevents="false" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
             <a-box
                 id="animated-model"
                 material='opacity: 0.0;'
@@ -49,7 +103,15 @@
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM A MOUSE \n | \n | " 
+				value="I AM A MOUSE" 
+				align='center' 
+				anchor='align'
+			
+				rotation="-45 0 0">
+		    	</a-text>	
+		        <a-text
+				
+				value="\n | \n | \n |" 
 				align='center' 
 				anchor='align'
 			
