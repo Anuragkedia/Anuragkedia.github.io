@@ -21,13 +21,10 @@
         // every click, we make our model grow in size :)
         animatedMarker.addEventListener('click', function(ev, target){
             const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-		window.location.replace("http://www.google.com");
-
             if (aEntity && intersectedElement === aEntity) {
                 const scale = aEntity.getAttribute('scale');
                 Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
                 aEntity.setAttribute('scale', scale);
-		    
             }
         });
 }});
@@ -41,19 +38,13 @@
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
         </a-assets>
 
-        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
-           <a-box  id="animated-model" position='0 0.5 0' material='opacity: 0.5;'>
+    <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
             <a-entity
-               
-                align='center' 
-		anchor='align' 
-                text="value: HELLO;color:black"
-                rotation = "-100 0 0"
-                scale="5">
+                id="animated-model"
+                gltf-model="#animated-asset"
+                scale="2">
             </a-entity>
-           </a-box>
         </a-marker>
-
 
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
         <a-entity camera></a-entity>
