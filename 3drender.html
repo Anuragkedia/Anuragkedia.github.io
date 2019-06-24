@@ -1,19 +1,58 @@
+
 <!DOCTYPE html>
-<html>
+<!--
+
+<x-model> custom element demo by Keith Clark
+
+This is an experimental HTML custom element that renders 3D objects inline, with other
+content in a web page. For more information, to file bugs, request features or to contribute
+code, please see the github repo https://github.com/keithclark/3d-model-element.
+
+https://keithclark.co.uk
+https://twitter.com/keithclarkcouk
+
+-->
+<html lang="en-GB">
 <head>
-  <style>
-    .model {
-      width: 400px;
-      height: 400px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML custom element for displaying 3D models: Hello World</title>
+<style>
+.model { 
+  animation: spin 10s linear infinite;
+ }
+
+ @keyframes spin {
+   to {
+     transform: rotateY(1turn)
+   }
+ }
+</style>
 </head>
-
 <body>
-  <x-model class="model" src="IronMan.obj"></x-model>
+  <h1>Model custom element: Hello world</h1>
+  <x-model class="model" src="../assets/models/gltf/duck/Duck.gltf"></x-model>
+  <p>If everything worked OK, there should be a rotating 3D model above.</p>
 
-  <script src="js/three.min.js"></script>
-  <script src="js/three-obj-loader.min.js"></script>
-  <script src="js/model-element.min.js"></script>
+  <div class="panel panel--about">
+    <p><cite>This is a <a href="https://keithclark.co.uk">Keith Clark</a> experiment.
+    Feel free to contact me on <a href="https://twitter.com/keithclarkcouk">twitter</a>
+    if you have questions.</cite></p>
+  </div>
+
+  <script src="custom-element-polyfill.min.js"></script>
+  <script src="three.min.js"></script>
+  <script src="three-gltf-loader.min.js"></script>
+  <script src="model-element.min.js"></script>
+  <script>
+    if (window.location.host === 'keithclark.co.uk') {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-10812217-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
 </body>
 </html>
