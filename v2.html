@@ -202,7 +202,7 @@ function off2() {
     
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-       <div id="overlay" onclick="off">
+       <div id="overlay" onclick="off()">
      <img src = "mouse.jpg" class="center"/>
 		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
 	       </br>
@@ -211,7 +211,7 @@ function off2() {
    
 	</div>
 
-    <div id="overlay2" onclick="off2">
+    <div id="overlay2" onclick="off2()">
      <img src = "keyboard.jpg" class="center"/>
 		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
 	       </br>
@@ -219,7 +219,7 @@ function off2() {
 	       </p>
    
 	</div>
-    <div id="overlay3" onclick="off3">
+    <div id="overlay3" onclick="off3()">
      <img src = "cpu.jpg" class="center"/>
 		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
 	       </br>
@@ -227,7 +227,7 @@ function off2() {
 	       </p>
    
 	</div>
-    <div id="overlay4" onclick="off4">
+    <div id="overlay4" onclick="off4()">
      <img src = "hdmi.jpg" class="center"/>
 		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
 	       </br>
@@ -290,7 +290,7 @@ function off2() {
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM A CPU \n | \n | \n | \n  |  \n | \n  |" 
+				value="I AM A CPU \n | \n " 
 				align='center' 
 				anchor='align'
 				
@@ -307,11 +307,9 @@ function off2() {
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM AN HDBI CABLE\n | \n | " 
-				position="0 0 50"
-				 
-				anchor='align'
-			
+				value="I AM AN HDBI CABLE\n | \n | " 	
+				 align='center' 
+				anchor='align'		
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
