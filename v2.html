@@ -63,13 +63,22 @@
 }
 #text{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 10%;
+  right: 10%;
   font-size: 15px;
   color: green;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: 25%;
+}
+		   
 </style>
 	    
     </head>
@@ -194,7 +203,7 @@ function off2() {
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
        <div id="overlay" onclick="off()">
-     <img src = "mouse.jpg" width="25%" height="25%" />
+     <img src = "mouse.jpg" class="center"/>
 		<div id = "text"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
 	       </div>
    
@@ -210,7 +219,7 @@ function off2() {
  	 <div id="text">INFO ON HDMI CABLE</div>
 	</div>
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
