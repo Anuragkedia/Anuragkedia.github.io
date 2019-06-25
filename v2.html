@@ -160,6 +160,7 @@
     </script>
 	
 	 <script>
+var isDelayed = false;
 	    
 	   // var modal = document.getElementById("myModal");
    AFRAME.registerComponent('markerhandler4', {
@@ -173,7 +174,14 @@
                 //const scale = aEntity.getAttribute('scale');
                // Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
                // aEntity.setAttribute('scale', scale);
-		      document.getElementById("overlay4").style.display = "block";
+		     setTimeout(function() {
+      isDelayed = true;
+    }, 1000)
+if (isDelayed) {
+	isDelayed = false;
+  document.getElementById("overlay4").style.display = "block";
+}
+		     
 		    	//window.open("https://www.github.com");
 		    //  modal.style.display = "block";
             }
@@ -245,7 +253,7 @@ function off2() {
 	    
 	 
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
