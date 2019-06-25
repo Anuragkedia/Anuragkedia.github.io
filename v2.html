@@ -216,14 +216,12 @@ function off2() {
 	</div>
 
     <div id="overlay2" onclick="off2()">
-	    <br>
-	    	
-		<div class="sketchfab-embed-wrapper"><iframe width="50%" height="50%" align="center" src="https://sketchfab.com/models/63950eca4bb041beb3a6fd011b5c21b0/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-			
-		</br>
-		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
-		</p>
-   
+     <img src = "keyboard.jpg" class="center"/>
+		<div class="sketchfab-embed-wrapper"><iframe width="50%" height="50%" src="https://sketchfab.com/models/63950eca4bb041beb3a6fd011b5c21b0/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+    <a href="https://sketchfab.com/3d-models/building-dnt-v02-63950eca4bb041beb3a6fd011b5c21b0?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Building Dnt V02</a>
+    by <a href="https://sketchfab.com/anuragkedia?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">anuragkedia</a>
     
 </p>
 </div>
@@ -251,27 +249,27 @@ function off2() {
 	    
 	 
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
         </a-assets> -->
 
-        <a-entity bmfont-text="text: HELLO!; color: #333" position="0 0 -5"></a-entity>
+       
 
 		    
 		    <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
             <a-box
                 id="animated-model"
                 material='opacity: 0.0;'
-                scale="2">
+                scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM A MOUSE \n | \n | " 
+				value="I AM A MOUSE\n|\n|\n|" 
 				align='center' 
 				anchor='align'
-			
+				color = "red"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -282,14 +280,14 @@ function off2() {
             <a-box
                 id="animated-model2"
                 material='opacity: 0.0;'
-                scale="2">
+                scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM A KEYBOARD \n | \n | " 
+				value="I AM A KEYBOARD\n|\n|\n|" 
 				align='center' 
 				anchor='align'
-			
+				color = "red"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -299,14 +297,14 @@ function off2() {
             <a-box
                 id="animated-model3"
                 material='opacity: 0.0;'
-                scale="4">
+                scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM A CPU \n | \n " 
+				value="I AM A CPU\n|\n|\n|" 
 				align='center' 
 				anchor='align'
-				
+				color = "red"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -316,17 +314,15 @@ function off2() {
             <a-box
                 id="animated-model4"
                 material='opacity: 0.0;'
-                scale="2">
+                scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="I AM AN HDBI CABLE\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n| "
+				value="I AM AN HDBI CABLE\n|\n|\n|"
 				color = "red"
-				
+				rotation="-45 0 0"
 				align='center' 
-				
-				
-				>
+				anchor='align'>
 		    	</a-text>	
 <!-- 		    <a-text
 				
