@@ -245,7 +245,7 @@ function off2() {
 	    
 	 
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
@@ -325,11 +325,12 @@ function off2() {
 		    <a-text
 				
 				value="\n | \n |\n | \n |\n | \n |\n | \n | "
-				color = "red"
+				
 				
 				 align='center' 
 				anchor='align'	
 				
+				rotation = "-45 0 0"
 				>
 		    	</a-text>	
             </a-box>
