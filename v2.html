@@ -272,7 +272,7 @@ function off2() {
 	    
 	 
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
@@ -287,6 +287,7 @@ function off2() {
                 <a-text
 				id="animated-model"
 				value="MOUSE\n|\n|\n|" 
+				scale=3
 				geometry="primitive:plane"
 				align='center' 
 				anchor='align'
