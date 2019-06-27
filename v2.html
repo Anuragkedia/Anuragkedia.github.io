@@ -272,7 +272,7 @@ function off2() {
 	    
 	 
 	    
-	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
@@ -293,7 +293,7 @@ function off2() {
 				geometry="primitive:plane"
 				align='center' 
 				anchor='align'
-				color = "red"
+				color = "white"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -309,9 +309,10 @@ function off2() {
                 <a-text
 				
 				value="KEYBOARD\n|\n|\n|" 
+				geometry="primitive:plane"
 				align='center' 
 				anchor='align'
-				color = "red"
+				color = "white"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -325,10 +326,11 @@ function off2() {
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="CPU\n|\n|\n|" 
+				value="CPU\n|\n|\n|"
+				geometry="primitive:plane"
 				align='center' 
 				anchor='align'
-				color = "red"
+				color = "white"
 				rotation="-45 0 0">
 		    	</a-text>	
             </a-box>
@@ -342,8 +344,9 @@ function off2() {
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				
-				value="HDBI CABLE\n|\n|\n|"
-				color = "red"
+				value="FAN\n|\n|\n|"
+				geometry="primitive:plane"
+				color = "white"
 				rotation="-45 0 0"
 				align='center' 
 				anchor='align'>
