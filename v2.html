@@ -46,6 +46,11 @@
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
   cursor: pointer;
+	
+	.overlay-content3 {
+        height: 100%;
+        overflow: scroll;
+    }
 }
 
 		   
@@ -63,6 +68,9 @@
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
   cursor: pointer;
+	.overlay-content4 {
+        height: 100%;
+        overflow: scroll;
 }
 #text{
   position: absolute;
@@ -217,7 +225,7 @@ function off2() {
 	}, false);
 </script>
     
-    <body style='margin : 0px; overflow: hidden;'>
+    <body style='margin : 0px; overflow: auto;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
      <div id="overlay" onclick="off()">
     <br/>
@@ -266,7 +274,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
 
     <div id="overlay4" onclick="off4()">
-  
+  	<div class="overlay-content4>
 		
 	    <div class="container">
   <div class="row">
@@ -288,7 +296,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
 	    <br/>
 	    <p style="background-color: white;"> A computer fan is any fan inside, or attached to, a computer case used for active cooling. Fans are used to draw cooler air into the case from the outside, expel warm air from inside, and move air across a heat sink to cool a particular component. Both axial and sometimes centrifugal (blower/squirrel-cage) fans are used in computers. Computer fans commonly come in standard sizes, and are powered and controlled using 3- or 4-pin fan connectors. </p>
-		
+					       </div>		
 </div>
 
 
