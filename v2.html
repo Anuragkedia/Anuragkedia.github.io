@@ -56,12 +56,20 @@
 		   
 		   
 .overlay4 {
-    position: fixed; 
-    display: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+	
+	
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+	
 }
 .overlay4 .overlay-content4 {
     height: 100%;
@@ -308,23 +316,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 	  
 
 
-<!--     <div id="overlay3" onclick="off3()">
-     <img src = "cpu.jpg" class="center"/>
-		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
-	       </br>
-			<a href = "www.google.com"> Link to 3d model </a>
-	       </p>
-   
-	</div>
-    <div id="overlay4" onclick="off4()">
-     <img src = "hdmi.jpg" class="center"/>
-		<p style="background-color: white;"> A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. The first public demonstration of a mouse controlling a computer system was in 1968.
-	       </br>
-			<a href = "www.google.com"> Link to 3d model </a>
-	       </p>
-   
-	</div> -->
-	    
+
 	 
 	    
 	    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
