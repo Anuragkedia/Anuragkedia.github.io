@@ -431,7 +431,10 @@ function off2() {
         </a-marker>
 		    
 		    <a-marker markerhandler3 emitevents="true" cursor="rayOrigin: mouse" id="animated-marker3" type='barcode' value='5'>
-         
+         		     <a-box
+     
+                material='opacity: 0.2;'
+                scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
 				id="animated-model3"
@@ -453,7 +456,8 @@ function off2() {
 				anchor='align'
 				color = "white"
 				>
-		    	</a-text>	
+		    	</a-text>
+				     </a-box>
     
         </a-marker>
 		    
@@ -462,7 +466,7 @@ function off2() {
 		     <a-marker markerhandler4 emitevents="true" cursor="rayOrigin: mouse" id="animated-marker4" type='barcode' value='18'>
             <a-box
                 id="animated-model4"
-                material='opacity: 0.0;'
+                material='opacity: 0.2;'
                 scale="3">
 <!--                 <a-entity position="1 0 0" scale="3 3 3" text="value: HELLO;color:black" rotation = "-90 0 0" ></a-entity> -->
                 <a-text
