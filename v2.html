@@ -55,23 +55,19 @@
 
 		   
 		   
-#overlay4 {
-  position: fixed;	
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
-	.overlay-content4 {
-        height: 100%;
-        overflow: scroll;
+.overlay4 {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+.overlay4 .overlay-content4 {
+    height: 100%;
+    overflow: scroll;
+}
+		   
+
 #text{
   position: absolute;
   top: 25%;
@@ -82,6 +78,7 @@
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+		   
 .center {
   display: block;
   margin-left: auto;
@@ -274,7 +271,8 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
 
     <div id="overlay4" onclick="off4()">
-  	<div class="overlay-content4>
+  	
+	    <div class="overlay-content4>
 		
 	    <div class="container">
   <div class="row">
@@ -294,7 +292,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 	
 		
 
-	    <br/>
+	    <br>
 	    <p style="background-color: white;"> A computer fan is any fan inside, or attached to, a computer case used for active cooling. Fans are used to draw cooler air into the case from the outside, expel warm air from inside, and move air across a heat sink to cool a particular component. Both axial and sometimes centrifugal (blower/squirrel-cage) fans are used in computers. Computer fans commonly come in standard sizes, and are powered and controlled using 3- or 4-pin fan connectors. </p>
 					       </div>		
 </div>
