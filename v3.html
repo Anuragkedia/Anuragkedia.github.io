@@ -42,94 +42,17 @@
 </style>
 	    
 
-    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    	<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    	<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+  	<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="project_scripts.js"></script>
 	
 </head>
  
     
-<script>
- AFRAME.registerComponent('markerhandler', {
-  	init: function() {
-        	const animatedMarker = document.querySelector("#animated-marker");
-        	const aEntity = document.querySelector("#animated-model");
-        	animatedMarker.addEventListener('mousedown', function(ev, target){
-            		const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-            		if (aEntity && intersectedElement === aEntity) {
-		    		document.getElementById("overlay").style.display = "block";
-            		}
-        	});
-	}});
-</script>
-    
-       
-<script>
-   AFRAME.registerComponent('markerhandler2', {
-    init: function() {
-        const animatedMarker = document.querySelector("#animated-marker2");
-        const aEntity = document.querySelector("#animated-model2");
-        animatedMarker.addEventListener('mousedown', function(ev, target){
-            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-            if (aEntity && intersectedElement === aEntity) {
-		document.getElementById("overlay2").style.display = "block";
-            }
-        });
-}});
-</script>
-	
-<script>
-	
-   AFRAME.registerComponent('markerhandler3', {
-    init: function() {
-        const animatedMarker = document.querySelector("#animated-marker3");
-        const aEntity = document.querySelector("#animated-model3");
-        animatedMarker.addEventListener('mousedown', function(ev, target){
-            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-            if (aEntity && intersectedElement === aEntity) {
-                document.getElementById("overlay3").style.display = "block";	    
-            }
-        });
-}});
-</script>
-	
-<script>
-	   // var modal = document.getElementById("myModal");
-   AFRAME.registerComponent('markerhandler4', {
-   init: function() {
-        const animatedMarker = document.querySelector("#animated-marker4");
-        const aEntity = document.querySelector("#animated-model4");
-       	animatedMarker.addEventListener('mousedown', function(ev){
-       	const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-            if (aEntity && intersectedElement === aEntity) {
-         	document.getElementById("overlay4").style.display = "block";
-	   	}
-        });
-}});
-</script>
-	
-<script>		
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}		
-function off2() {
-  document.getElementById("overlay2").style.display = "none";
-}		
-function off3() {
-  document.getElementById("overlay3").style.display = "none";
-}
-function off4() {
-  document.getElementById("overlay4").style.display = "none";
-}
-</script>
 
-<script>
-	window.addEventListener("orientationchange", function() {
-		location = location;
-	}, false);
-</script>
     
     <body style='margin : 0px; overflow: auto;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
@@ -243,7 +166,7 @@ function off4() {
 	</div>				
 	</div>
 	
-	 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 <!--         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
@@ -365,10 +288,7 @@ function off4() {
         <a-entity camera></a-entity>
         </a-scene>
 	    
-	<script type="text/javascript">
-		alert("Kindly go close to the markers and click for more information");
-	</script>
-	    
+
 	    
     </body>
 </html>
