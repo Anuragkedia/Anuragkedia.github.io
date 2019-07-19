@@ -40,17 +40,96 @@
 }
 		   
 </style>
+	    
+
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<script src="project_scripts.js"></script>
 	
 </head>
  
     
+<script>
+ AFRAME.registerComponent('markerhandler', {
+  	init: function() {
+        	const animatedMarker = document.querySelector("#animated-marker");
+        	const aEntity = document.querySelector("#animated-model");
+        	animatedMarker.addEventListener('mousedown', function(ev, target){
+            		const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            		if (aEntity && intersectedElement === aEntity) {
+		    		document.getElementById("overlay").style.display = "block";
+            		}
+        	});
+	}});
+</script>
+    
+       
+<script>
+   AFRAME.registerComponent('markerhandler2', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker2");
+        const aEntity = document.querySelector("#animated-model2");
+        animatedMarker.addEventListener('mousedown', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+		document.getElementById("overlay2").style.display = "block";
+            }
+        });
+}});
+</script>
+	
+<script>
+	
+   AFRAME.registerComponent('markerhandler3', {
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker3");
+        const aEntity = document.querySelector("#animated-model3");
+        animatedMarker.addEventListener('mousedown', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                document.getElementById("overlay3").style.display = "block";	    
+            }
+        });
+}});
+</script>
+	
+<script>
+	   // var modal = document.getElementById("myModal");
+   AFRAME.registerComponent('markerhandler4', {
+   init: function() {
+        const animatedMarker = document.querySelector("#animated-marker4");
+        const aEntity = document.querySelector("#animated-model4");
+       	animatedMarker.addEventListener('mousedown', function(ev){
+       	const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+         	document.getElementById("overlay4").style.display = "block";
+	   	}
+        });
+}});
+</script>
+	
+<script>		
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}		
+function off2() {
+  document.getElementById("overlay2").style.display = "none";
+}		
+function off3() {
+  document.getElementById("overlay3").style.display = "none";
+}
+function off4() {
+  document.getElementById("overlay4").style.display = "none";
+}
+</script>
 
+<script>
+	window.addEventListener("orientationchange", function() {
+		location = location;
+	}, false);
+</script>
     
     <body style='margin : 0px; overflow: auto;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
@@ -75,35 +154,32 @@
 		<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
     		</div>
     		
-		<div class="col-sm-3">
+		<div class="col-sm-3>
       		<h3 style="background-color: white;">Info</h3>        
 		<p style="background-color: white;">A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. </p>
    		 </div>
   	</div>
 	</div>
 	</div>
-
-
     	<div class="overlay" id="overlay2" onclick="off2()">
    	<div class="container">
   	<div class="row">
 			
-   		<div class="col-sm-3">
+   		<div class="col-sm-3>
       		<h3 style="background-color: white;">3D Model</h3>
      		<div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/1ad7ecbb4c0b472a850f7e8ee1e5f882/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 		</div>
 		</div>
     
-		<div class="col-sm-3">
+		<div class="col-sm-3>
 	
 		</div>
-
-    		<div class="col-sm-3">
+    		<div class="col-sm-3>
 		<h3 style="background-color: white;">Video</h3>
 		<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
    		</div>
     
-		<div class="col-sm-3">
+		<div class="col-sm-3>
       		<h3 style="background-color: white;" > Info</h3>        
 		<p style="background-color: white;"> A computer keyboard is a typewriter-style device[1] which uses an arrangement of buttons or keys to act as mechanical levers or electronic switches. Following the decline of punch cards and paper tape, interaction via teleprinter-style keyboards became the main input method for computers.</p>
     		</div>
@@ -111,59 +187,54 @@
   	</div>
 	</div>	
 	</div>
-
 	<div class="overlay" id="overlay3" onclick="off3()">
    	<div class="container">
   	<div class="row">
     		
-		<div class="col-sm-3">
+		<div class="col-sm-4">
      		<h3 style="background-color: white;">3D Model</h3>
       		<div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/55232de9544f441b82a40e975b34cca8/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 		</div>
 		</div>
     
-    		<div class="col-sm-3">
+    		<div class="col-sm-4">
 	  	<object data="manual.pdf" type="application/pdf">
     		<iframe src="https://docs.google.com/viewer?url=manual.pdf&embedded=true"></iframe>
 		</object>
 	  	</div>
-
-    		<div class="col-sm-3">
+    		<div class="col-sm-4">
       		<h3 style="background-color: white;">Video</h3>
       		<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
     		</div>
 	  
-    		<div class="col-sm-3">
+    		<div class="col-sm-4">
      		<h3 style="background-color: white;">Info</h3>        
       		<p style="background-color: white;"> A central processing unit (CPU), also called a central processor or main processor, is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions. The computer industry has used the term "central processing unit" at least since the early 1960s. </p>
    	 	</div>
   	</div>
 	</div>
 	</div>
-
-
    	<div class="overlay" id="overlay4" onclick="off4()">
   	<div class="container">
   	<div class="row">
     
-	<div class="col-sm-3">
+	<div class="col-sm-4">
       	<h3 style="background-color: white;">3D Model</h3>
       	<div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/319efdd55146486dbef39336929b6ff4/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 	</div>
 	</div>
     
-    	<div class="col-sm-3">
+    	<div class="col-sm-4">
 	<object data="manual.pdf" type="application/pdf">
        	<embed src="manual.pdf" type="application/pdf" />
 	</object>
 	</div>
-
-    	<div class="col-sm-3">
+    	<div class="col-sm-4">
 	<h3 style="background-color: white;">Video</h3>
 	<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
 	</div>
     
-	<div class="col-sm-3">
+	<div class="col-sm-4">
       	<h3 style="background-color: white;">Info</h3>        
 	<p style="background-color: white;"> A computer fan is any fan inside, or attached to, a computer case used for active cooling. Fans are used to draw cooler air into the case from the outside, expel warm air from inside, and move air across a heat sink to cool a particular component. Both axial and sometimes centrifugal (blower/squirrel-cage) fans are used in computers. Computer fans commonly come in standard sizes, and are powered and controlled using 3- or 4-pin fan connectors. </p>
     	</div>
@@ -171,11 +242,6 @@
 	</div>
 	</div>				
 	</div>
-	
-	<!-- New overlay should be added below --->
-        
-        <!-- New overlay should be added above --->
-
 	<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 					   
 	<a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
@@ -254,7 +320,6 @@
 	<a-text
 		value="FAN"
 		geometry="primitive:plane"
-
 		color = "black"
 		rotation="-90 0 0"
 		align='center' 
@@ -264,14 +329,13 @@
         </a-marker>
         
         
-	<!-- New marker should be added below --->
         
-        <!-- New marker should be added above --->
-
-				  
-	</a-scene>
+<!--         <a-entity camera></a-entity> -->
+        </a-scene>
 	    
-	
+	<script type="text/javascript">
+		alert("Kindly go close to the markers and click for more information");
+	</script>
 	    
 	    
     </body>
