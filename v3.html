@@ -19,7 +19,57 @@
   z-index: 2;
   cursor: pointer;
 }
-
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+overflow: scroll;
+ 
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+		   
+#overlay3 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+overflow: scroll;
+ 
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+	
+}
+		   
+		   
+#overlay4 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+	
+	
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+	
+}
 		   
 #text{
   position: absolute;
@@ -68,7 +118,7 @@
                 //const scale = aEntity.getAttribute('scale');
                // Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
                // aEntity.setAttribute('scale', scale);
-		      document.getElementById("overlay1").style.display = "block";
+		      document.getElementById("overlay").style.display = "block";
 		    	//window.open("https://www.github.com");
 		    //  modal.style.display = "block";
             }
@@ -152,7 +202,7 @@ var isDelayed = false;
 	<script>
 		
 function off() {
-  document.getElementById("overlay1").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }
 function off2() {
   document.getElementById("overlay2").style.display = "none";
@@ -173,72 +223,78 @@ function off2() {
 	
 	}, false);
 </script>
-  <body style='margin : 0px; overflow: auto;'>
-        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-     
-  <div id="overlay" onclick="off()">
-  
-  <div class="container">
-  <div class="row">
     
+    <body style='margin : 0px; overflow: auto;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+     <div id="overlay" onclick="off()">
+    
+	        
+	<div class="container">
+  <div class="row">
     <div class="col-sm-3">
       <h3 style="background-color: white;">3D Model</h3>
-      <div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/76196717000a4eb48b7b0517b0926520/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-      </div>
-    </div>
-    
+     <div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/76196717000a4eb48b7b0517b0926520/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+</div>
     <div class="col-sm-3">
-	    <h3 style="background-color: white;">Manual</h3>
-      <iframe src="manual.pdf"></iframe>
-    </div>
+	  
+	   <h3 style="background-color: white;">Video</h3>
+<iframe src="manual.pdf"></iframe>
+	
+	  
+	  </div>
 
     <div class="col-sm-3">
+
+
       <h3 style="background-color: white;">Video</h3>
-      <iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
+<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
+
     </div>
-    
-    <div class="col-sm-3">
+    <div class="col-sm-4">
       <h3 style="background-color: white;">Info</h3>        
-      <p style="background-color: white;">A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. </p>
+
+<p style="background-color: white;">A computer mouse, often simply referred to as a mouse, is a hand-held pointing device that detects two-dimensional motion relative to a surface. This motion is typically translated into the motion of a pointer on a display, which allows a smooth control of the graphical user interface. </p>
     </div>
-    
   </div>
 </div>
+
+   
+	</div>
+
+
+    <div id="overlay2" onclick="off2()">
+   	   
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h3 style="background-color: white;">3D Model</h3>
+      <div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/1ad7ecbb4c0b472a850f7e8ee1e5f882/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
 </div>
+</div>
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-5">
 
 
-
-  <div class="overlay" id="overlay2" onclick="off2()">
-    <div class="container">
-      <div class="row">
-      
-      <div class="col-sm-3">
-        <h3 style="background-color: white;">3D Model</h3>
-        <div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/1ad7ecbb4c0b472a850f7e8ee1e5f882/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>
-      </div>
-   
-   
-      <div class="col-sm-3">
-        <h3 style="background-color: white;">Manual</h3>
-      </div>
-      
-       
-    <div class="col-sm-3">
       <h3 style="background-color: white;">Video</h3>
-      <iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
-    </div>
-    
-    <div class="col-sm-3">
-      <h3 style="background-color: white;" > Info</h3>        
-      <p style="background-color: white;"> A computer keyboard is a typewriter-style device[1] which uses an arrangement of buttons or keys to act as mechanical levers or electronic switches. Following the decline of punch cards and paper tape, interaction via teleprinter-style keyboards became the main input method for computers.</p>
-    </div>
-    
-    </div>
-</div>
-</div>
+<iframe src="https://www.youtube.com/embed/JwkngJQNgoY"></iframe>
 
-<div class="overlay" id="overlay3" onclick="off3()">
+    </div>
+    <div class="col-sm-4">
+      <h3 style="background-color: white;" > Info</h3>        
+
+<p style="background-color: white;"> A computer keyboard is a typewriter-style device[1] which uses an arrangement of buttons or keys to act as mechanical levers or electronic switches. Following the decline of punch cards and paper tape, interaction via teleprinter-style keyboards became the main input method for computers.</p>
+    </div>
+  </div>
+</div>
+	    
+   
+	</div>
+
+<div id="overlay3" onclick="off3()">
    
    <div class="container">
   <div class="row">
@@ -272,7 +328,7 @@ function off2() {
 	    </div>
 
 
-    <div class = "overlay" id="overlay4" onclick="off4()">
+    <div id="overlay4" onclick="off4()">
   	
 	   
 	<div class="container">
@@ -441,8 +497,8 @@ function off2() {
         </a-scene>
 	    
 	<script type="text/javascript">
-alert("Kindly go close to the markers and click for more information");
-</script>
+		alert("Kindly go close to the markers and click for more information");
+	</script>
 	    
 	    
     </body>
