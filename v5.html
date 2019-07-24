@@ -207,8 +207,8 @@ tr:nth-child(even) {
     
 	<div class="col-sm-3">
       	<h3 class="text">Flow Chart</h3>
-	<iframe src="Capture.png"></iframe>
-	<img src="Capture.PNG"></img>
+<!-- 	<iframe src="Capture.png"></iframe> -->
+	<img src="Capture.PNG" width="100%"></img>
 	
       	<!--<div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/319efdd55146486dbef39336929b6ff4/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 	</div> -->
@@ -265,7 +265,21 @@ tr:nth-child(even) {
         </a-marker> -->
        
 	<a-marker markerhandler2 emitevents="true" cursor="rayOrigin: mouse" id="animated-marker2" type='barcode' value='1'>
-        <a-box
+	<a-box
+                id="animated-model4"
+                material='opacity: 0.2;'
+                scale="3">
+		<a-text				
+			value="Manual"
+			geometry="primitive:plane"	
+			color = "black"
+			rotation="-90 0 0"
+			align='center' 
+			anchor='align'>
+		</a-text>	
+	</a-box>
+		
+		<!--         <a-box
     		material='opacity: 0.2;'
                 scale="3">
        	<a-text
@@ -285,11 +299,26 @@ tr:nth-child(even) {
 		anchor='align'
 		color = "white">
 	</a-text>
-	</a-box>
+	</a-box> -->
         </a-marker>
 		    
 	<a-marker markerhandler3 emitevents="true" cursor="rayOrigin: mouse" id="animated-marker3" type='barcode' value='5'>
-       	<a-box
+		
+		<a-box
+                id="animated-model4"
+                material='opacity: 0.2;'
+                scale="3">
+		<a-text				
+			value="Parameters"
+			width="3px"
+			geometry="primitive:plane"	
+			color = "black"
+			rotation="-90 0 0"
+			align='center' 
+			anchor='align'>
+		</a-text>	
+	</a-box>
+<!--        	<a-box
     		material='opacity: 0.2;'
                 scale="3">
        	<a-text
@@ -309,7 +338,7 @@ tr:nth-child(even) {
 		anchor='align'
 		color = "white">
 	</a-text>
-	</a-box>
+	</a-box> -->
    	</a-marker>
 		    
         
